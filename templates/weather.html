@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/weather.css') }}">  -->
+     <link rel="stylesheet" href="../static/css/weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+</head>
+<body>
+    <nav id="nav">
+        <div id="logo">
+            <img src="{{ url_for('static', filename='images/3228952.png') }}" alt="Logo" id="img">
+            <h3 id="agro">Agro</h3>
+        </div>
+        <div id="list">
+            <ul>
+                <li><a href="/"><i class="fa-solid fa-house"></i> Home </a></li>
+                <li><a href="/form"><i class="fa-solid fa-cash-register"></i> Predict </a></li>
+                <li><a href="/weather"><i class="fa-solid fa-cloud" ></i> weather</a></li>
+                <li><a href="/iot"><i class="fa-solid fa-cloud" ></i> IOT</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <div class="form">
+        <form action="/weather" method="post">
+            <input type="text" name="place" id="place" placeholder="Enter the location">
+            <button type="submit" id="lbtn">search</button>
+        </form>
+    </div>
+
+        <div class="wh"><h1 id="wh">{{placeo}} Weather Report </h1></div>
+        <!-- {{info}} -->
+         <div id="cardcontainer">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/temp.svg') }}" class="img" alt="">
+                <div class="content">
+                    <h3 class="title">Temprature</h3>
+                    <p class="desc">{{tempr}} degree celsius</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/speed.png') }}" class="img" alt="">
+                <div class="content">
+                    <h3 class="title">Wind Speed</h3>
+                    <p class="desc">{{speed}} kmph</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/humid1.svg') }}" class="img" alt="">
+                <div class="content">
+                    <h3 class="title">Humidity</h3>
+                    <p class="desc">{{humid}}%</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/pressure.svg') }}" class="img" alt="">
+                <div class="content">
+                    <h3 class="title">Pressure</h3>
+                    <p class="desc">{{pressure}} Pascal</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/visible.svg') }}" class="img" alt="">
+                <div class="content">
+                    <h3 class="title">Visibility</h3>
+                    <p class="desc">{{visible}} Meters</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/globe.svg') }}" class="img" alt="">
+                <div class="content">
+                    <h3 class="title">Coordinates</h3>
+                    <p class="desc">{{latitude}}° N</p>
+                    <p class="desc">{{longitude}}° E</p>
+                </div>
+            </div>
+            
+       
+         </div>
+         
+    <div id="footer">
+        <footer>
+            <Center>&copy; 2024-25, Design and Developed by Abhi Ram, Chandan Gowda, Gowtham, Likhitha Priya</Center>
+            <hr>
+        </footer>
+    </div>
+</body>
+</html>

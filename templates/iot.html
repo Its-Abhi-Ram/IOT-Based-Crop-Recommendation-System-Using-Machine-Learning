@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOT Model</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/iot.css') }}">        
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/3228952.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/14.3.0/simpleicons.svg">
+
+</head>
+<nav id="nav">
+    <div id="logo">
+        
+        <img src="{{ url_for('static', filename='images/3228952.png') }}" alt="Logo" id="img">
+        <h3  id="agro">Agro</h3>
+    </div>
+    <div id="list">
+        <ul>
+            <li><a href="/"><i class="fa-solid fa-house"></i> Home </a></li>
+            <li><a href="/form"><i class="fa-solid fa-cash-register"></i> Predict </a></li>
+            <li><a href="/weather"><i class="fa-solid fa-cloud" ></i> weather</a></li>
+            <li><a href="/iot"><i class="fa-solid fa-cloud" ></i> IOT</a></li>
+        </ul>
+    </div>
+    
+</nav>
+<div id="heading"><h1 > Crop Recomandation System using Machine Learning</h1></div>
+<div class="login"> 
+    <h2 style="text-align: center;" id="innertitle">Automated from IOT, land and atmospheatre details</h2><br> 
+    
+<div class="entry">
+    <form id="login" action="/predict" method="post">
+        <label><b>Nitrogen:     
+         </b><br>    
+         </label> <input type="text" class="input"name="N" placeholder="Nitrogen " value="{{N}}" required="required"/> <br><br>
+        <label><b>Phosphorus:     
+         </b><br>    
+         </label><input type="text" class="input"name="P" placeholder="Phosphorus " value="{{P}}" required="required"/><br><br>
+        <label><b>Potassium:     
+         </b><br>    
+         </label><input type="text" class="input"name="k" placeholder="Potassium " value="{{K}}" required="required"/><br><br>
+        <label><b>Temperature:     
+         </b><br>    
+         </label><input type="text" class="input"name="temperature" placeholder="temperature " value="{{Temp}}" required="required"/><br><br>
+        <label><b>Humidity:     
+         </b><br>    
+         </label><input type="text" class="input"name="humidity" placeholder=" Humidity" value="{{Humid}}" required="required"/><br><br>
+        <label><b>pH:     
+         </b><br>    
+         </label><input type="text" class="input"name="ph" placeholder="ph " value="{{pH}}" required="required"/><br><br>
+        <!-- <label><b>Rainfall:     
+         </b><br>    
+         </label><input type="text"class="input" name="rainfall" placeholder="rainfall " {{rain}} required="required"/><br><br> -->
+ 
+        <div id="btncontainer">
+            <button align="right" type="submit" class="btn">Predict Crop   </button>
+            <button align="right" type="reset" class="btn">Reset  </button>
+        </div>
+ </form>
+</div >
+
+</div>
+<div id="footer">
+    <footer>
+        <Center>&copy; 2024-25, Design and Developed by Abhi Ram, Chandan Gowda, Gowtham, Likhitha Priya</Center>
+        <hr>
+    </footer>
+</div>
+
+
+</body>    
+</html>

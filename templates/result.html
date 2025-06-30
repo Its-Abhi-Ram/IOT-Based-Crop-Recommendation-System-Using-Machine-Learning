@@ -1,0 +1,42 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Prediction</title>   
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/3228952.png') }}" type="image/x-icon"> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />     
+    <!-- <link rel="stylesheet" type="text/css" href="style.css">         -->
+   
+    
+</head>     
+<body> 
+    <nav id="nav">
+        <div id="logo">
+            <img src="{{ url_for('static', filename='images/3228952.png') }}" alt="Logo" id="img">
+            <h3  id="agro">Agro</h3>
+        </div>
+        <div id="list">
+            <ul>
+                <li><a href="/"><i class="fa-solid fa-house"></i> Home </a></li>
+                <li><a href="/form"><i class="fa-solid fa-cash-register"></i> Predict </a></li>
+                <li><a href="/weather"><i class="fa-solid fa-cloud" ></i> weather</a></li>
+                <li><a href="/iot"><i class="fa-solid fa-cloud" ></i> IOT</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <div id="heading"><h1 > Crop Recomandation System using Machine Learning</h1></div>
+    <div class="login"> 
+    <h2 style="text-align: center;" id="innertitle">Prediction:</h2><br> 
+    <div id="predict"><h3 style="font-weight:100;">Crop recomanded for the land  is : <b>{{prediction_text}}</b></h3></div>
+    
+</div>
+
+<div id="footer">
+    <footer>
+        <Center>&copy; 2024-25, Design and Developed by Abhi Ram, Chandan Gowda, Gowtham, Likhitha Priya</Center>
+        <hr>
+    </footer>
+</div>
+</body>    
+</html>

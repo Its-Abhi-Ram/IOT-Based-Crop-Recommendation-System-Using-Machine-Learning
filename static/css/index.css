@@ -1,0 +1,197 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background-color:rgb(243, 239, 247);
+    min-height: 100vh;
+
+}
+.container
+{
+    
+    content: " ";
+    inset: 0;
+    position: fixed;
+    z-index: -1;
+    background-image: url('../images/home1.jpg');
+    background-position:center;
+    background-attachment: fixed;
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size:cover;  
+}
+.innerc{
+    width: 100%;
+    /* height: 150px; */
+    text-align: center;
+    margin-top:230px;
+    color: white;
+
+}
+#hori{
+    width: 50rem;
+    margin: auto;
+}
+#nav{
+    width:100%;
+    height: 65px;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    position: static;
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    /* background-color: #7323d4; */
+}
+#agro{
+    font-size: 26px;
+}
+#logo{
+    display: flex;
+    justify-content: space-evenly;
+    width: 120px;
+}
+#img{
+    width: 35px;
+    height: 35px;
+    filter: invert(10);
+}
+#list{
+    display: flex;
+}
+#list ul li{
+    list-style: none;
+    float: left;
+    color: white ;
+    margin-left: 18px;
+}
+#list ul li a{
+    
+    color: white ;
+    font-size: 17px;
+    text-decoration: none;
+}
+#list ul li :hover{
+    color: #cab0e9;
+    text-decoration: underline 1px solid rgb(221, 213, 213);
+}
+#btn{
+    width: 10rem;
+    height: 45px;
+    border-radius: 45px;
+    border: none;
+    margin-top: 10px;
+    background:  rgba(0,0,0,0.6);
+    color:white;
+    font-size: 18px;
+
+
+}
+#btn a{
+    color: white;
+    text-decoration: none;
+}
+#btn:hover{
+    
+    cursor: pointer;
+    background:  rgba(0,0,0,0.2);
+    color:white;
+    border: 1px solid black;
+
+}
+#footer{
+    width: 100%;
+    height: 60px;
+    color: white;
+    background:  rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 280px;
+}
+@media screen and (max-width : 1300px) {
+
+    #nav{
+    width:auto;
+    height: 55px;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    overflow: hidden;
+    /* background-color: #7323d4; */
+    }
+    #logo{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100px;
+    }
+    #img{
+    width: 25px;
+    height: 25px;
+    filter: invert(10);
+    }
+    #agro{
+    font-size: 20px;
+    }
+    
+    #list ul li{
+    list-style: none;
+    float: left;
+    color: white ;
+    margin-left: 15px;
+    }
+    #list ul li a{
+    
+    color: white ;
+    font-size: 15px;
+    text-decoration: none;
+    }
+}
+
+@media screen and (max-width : 1300px) {
+    
+    #nav{
+        width:auto;
+        height: 55px;
+        color: white;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+        overflow: hidden;
+        /* background-color: #7323d4; */
+    }
+    #logo{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100px;
+    }
+    #img{
+        width: 25px;
+        height: 25px;
+        filter: invert(10);
+    }
+    #agro{
+        font-size: 20px;
+    }
+    
+    #list ul li{
+        list-style: none;
+        float: left;
+        color: white ;
+        margin-left: 15px;
+    }
+    #list ul li a{
+        
+        color: white ;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+}
