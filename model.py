@@ -1,83 +1,3 @@
-# # -*- coding: utf-8 -*-
-# #import libraries
-# import numpy as np
-# import requests , json
-# from flask import Flask, render_template,request
-# import http.client
-# import pickle#Initialize the flask App
-# app = Flask(__name__)
-# model = pickle.load(open('model.pkl', 'rb'))
-
-
-# #default page of our web-app
-# @app.route('/')
-# def home():
-#     return render_template('./index.html')
-
-
-# @app.route('/form')
-# def form():
-#     return render_template('./form.html')
-
-# #To use the predict button in our web-app
-# @app.route('/predict',methods=['POST'])
-# def predict():
-#     #For rendering results on HTML GUI
-#     int_features = [float(x) for x in request.form.values()]
-#     final_features = [np.array(int_features)]
-#     # print(final_features)
-#     prediction = model.predict(final_features)
-#     output = prediction 
-#     return render_template('./result.html', prediction_text=f'{output[0].capitalize()}')
-
-
-
-# @app.route('/weather', methods= ['POST', 'GET'])
-# def weather():
-#     print(request.method)
-#     if request.method == "POST":
-#         location = request.form.get("place")
-#         print(location)
-#         api_key ='03b1acbfd0387ac994dad57eb102fe01'
-        
-#         link = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+api_key
-#         api_link = requests.get(link)
-#         data = api_link.json()
-#         # print(data)
-#         temp= round((data['main']['temp'])-273.15,2)
-#         humidity=data['main']['humidity']
-#         pressure1=data['main']['pressure']
-#         # weather_desc = data['weather'][0]['description'].capitalize()
-#         wind_speed = data['wind']['speed']
-#         place =data['name']
-#         visible=data['visibility']
-#         latitude=data['coord']['lat']
-#         longitude=data['coord']['lon']
-#         # return render_template('./weather.html', info=data,tempr=temp,desc=weather_desc,speed=wind_speed,humid=humidity,pressure=pressure1,placeo=place)
-#     else:
-#         api_key ='03b1acbfd0387ac994dad57eb102fe01'
-#         location = 'Kolar'
-#         link = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+api_key
-#         api_link = requests.get(link)
-#         data = api_link.json()
-#             # print(data)
-#         temp= round((data['main']['temp'])-273.15,2)
-#         humidity=data['main']['humidity']
-#         pressure1=data['main']['pressure']
-#         # weather_desc = data['weather'][0]['description'].capitalize()
-#         wind_speed = data['wind']['speed']
-#         place =data['name']
-#         visible=data['visibility']
-#         latitude=data['coord']['lat']
-#         longitude=data['coord']['lon']
-#     return render_template('./weather.html', info=data,tempr=temp,speed=wind_speed,humid=humidity,pressure=pressure1,placeo=place,visible=visible,latitude=latitude,longitude=longitude)
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
-
-
-
-
 
 # -*- coding: utf-8 -*-
 import numpy as np
@@ -86,7 +6,8 @@ from flask import Flask, render_template, request
 import pickle
 from warnings import filterwarnings
 filterwarnings('ignore')
-
+key = 03b1acbfd0387ac994dad57eb102fe01
+thingskey = 0QLB3KNKJI62Q9E8&results=2
 # Initialize the Flask app
 app = Flask(__name__)
 
@@ -105,7 +26,7 @@ def home():
 def iot():
     try:
         # Fetch data from the IoT ThingSpeak API
-        data = requests.get("https://api.thingspeak.com/channels/2900389/feeds.json?api_key=0QLB3KNKJI62Q9E8&results=2")
+        data = requests.get(f"https://api.thingspeak.com/channels/2900389/feeds.json?api_key={thingskey}")
         data = data.json()  # Parse JSON response
 
         # Extract sensor values from the API response
@@ -166,7 +87,7 @@ def weather():
             location = 'Kolar'  # Default location if none is provided
 
         # Fetch weather data from the OpenWeatherMap API
-        api_key = '03b1acbfd0387ac994dad57eb102fe01'
+        api_key = key
         link = f"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}"
         api_link = requests.get(link)
         data = api_link.json()
@@ -199,3 +120,4 @@ def weather():
 if __name__ == "__main__":
     # Run the Flask app in debug mode
     app.run(debug=True)
+
