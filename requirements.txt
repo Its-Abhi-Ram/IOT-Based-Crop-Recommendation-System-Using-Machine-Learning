@@ -1,4 +1,6 @@
+Flask
 numpy
 requests
-flask
+gunicorn
 scikit-learn
+pickle-mixin
